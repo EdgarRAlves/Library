@@ -11,11 +11,11 @@ public class Book {
     private String author;
     private @Id Long barcode;
     private Integer quantity;
-    private Float price;
+    private Double price;
 
     protected Book() {}
 
-    public Book(String name, String author, Long barcode, Integer quantity, Float price) {
+    public Book(String name, String author, Long barcode, Integer quantity, Double price) {
         this.name = name;
         this.author = author;
         this.barcode = barcode;
@@ -39,7 +39,7 @@ public class Book {
         return this.quantity;
     }
 
-    public Float getPrice() {
+    public Double getPrice() {
         return this.price;
     }
 
@@ -59,7 +59,7 @@ public class Book {
         this.quantity = quantity;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
