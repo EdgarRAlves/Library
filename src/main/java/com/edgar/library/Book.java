@@ -6,16 +6,16 @@ import jakarta.persistence.Id;
 import java.util.Objects;
 
 @Entity
-public class Book {
+class Book {
     private String name;
     private String author;
     private @Id Long barcode;
     private Integer quantity;
     private Double priceUnit;
 
-    protected Book() {}
+    public Book() {}
 
-    public Book(String name, String author, Long barcode, Integer quantity, Double priceUnit) {
+    Book(String name, String author, Long barcode, Integer quantity, Double priceUnit) {
         this.name = name;
         this.author = author;
         this.barcode = barcode;
@@ -43,15 +43,11 @@ public class Book {
         return this.priceUnit;
     }
 
-    public Double getTotalPrice() {
-        return this.priceUnit * this.quantity;
-    }
-
-    public void setName(String Name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public void setAuthor(String Author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
