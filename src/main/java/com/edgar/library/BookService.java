@@ -32,4 +32,10 @@ class BookService {
             })
             .orElseThrow(() -> new BookNotFoundException(barcode));
     }
+
+    public Double calculateTotalPrice(Long barcode) {
+        Book book = repository.findById(barcode) . orElseThrow(() -> new BookNotFoundException(barcode));
+
+        return book.getQuantity() * book.getPriceUnit();
+    }
 }
