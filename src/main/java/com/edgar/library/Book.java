@@ -11,16 +11,16 @@ public class Book {
     private String author;
     private @Id Long barcode;
     private Integer quantity;
-    private Double price;
+    private Double priceUnit;
 
     protected Book() {}
 
-    public Book(String name, String author, Long barcode, Integer quantity, Double price) {
+    public Book(String name, String author, Long barcode, Integer quantity, Double priceUnit) {
         this.name = name;
         this.author = author;
         this.barcode = barcode;
         this.quantity = quantity;
-        this.price = price;
+        this.priceUnit = priceUnit;
     }
 
     public String getName() {
@@ -39,8 +39,12 @@ public class Book {
         return this.quantity;
     }
 
-    public Double getPrice() {
-        return this.price;
+    public Double getPriceUnit() {
+        return this.priceUnit;
+    }
+
+    public Double getTotalPrice() {
+        return this.priceUnit * this.quantity;
     }
 
     public void setName(String Name) {
@@ -59,8 +63,8 @@ public class Book {
         this.quantity = quantity;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setPrice(Double priceUnit) {
+        this.priceUnit = priceUnit;
     }
 
     @Override
@@ -72,17 +76,17 @@ public class Book {
         Book book = (Book) o;
         return Objects.equals(this.name, book.name) && Objects.equals(this.author, book.author) &&
                 Objects.equals(this.barcode, book.barcode) && Objects.equals(this.quantity, book.quantity) &&
-                Objects.equals(this.price, book.price);
+                Objects.equals(this.priceUnit, book.priceUnit);
     }
 
     @Override
     public int hashCode() {
-       return Objects.hash(this.name, this.author, this.barcode, this. quantity, this.price);
+       return Objects.hash(this.name, this.author, this.barcode, this. quantity, this.priceUnit);
     }
 
     @Override
     public String toString() {
         return "Book{" + "name=" + this.name + ", author=" + this.author + ", barcode=" + this.barcode +
-                ", quantity=" + this.quantity + ", price =" + this.price + '}';
+                ", quantity=" + this.quantity + ", price =" + this.priceUnit + '}';
     }
 }
