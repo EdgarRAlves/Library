@@ -43,16 +43,7 @@ class BookService {
         return book.calculateTotalPrice();
     }
 
-    public Map<Integer, List<Book>> getListBarcodes() {
-        return groupByQuantity(findAllInStock());
-    }
-
-    // Books can have quantity = 0
-    public List<Book> findAllInStock() {
-         return repository.findAll().stream().filter(p -> p.getQuantity() > 0).collect(Collectors.toList());
-    }
-
-    public Map<Integer, List<Book>> groupByQuantity(List<Book> books) {
-        return books.stream().collect(Collectors.groupingBy(Book::getQuantity));
+    public List<Object[]> getListBarcodes() {
+        return repository.findBarcodesInStockGroupByQuantity();
     }
 }

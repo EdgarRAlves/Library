@@ -38,9 +38,9 @@ class BookController {
         return service.getTotalPrice(barcode);
     }
 
-    // Get a list of barcodes of books in stock grouped by quantity. Barcodes sorted by total price.
+    // Get a list of barcodes of books in stock grouped by quantity.
     @GetMapping("/books")
-    Map<Integer, List<Book>> listBarcodes() {
+    List<Object[]> listBarcodes() {
         return service.getListBarcodes();
     }
 }
