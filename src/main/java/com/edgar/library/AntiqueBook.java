@@ -1,12 +1,17 @@
 package com.edgar.library;
 
+import jakarta.persistence.Entity;
+
 import java.time.Year;
 import java.util.Objects;
 
+@Entity
 public class AntiqueBook extends Book {
     private static final Integer CURRENT_YEAR = Year.now().getValue();
 
     private Integer releaseYear;
+
+    public AntiqueBook() {}
 
     public AntiqueBook(String name, String author, Long barcode, Integer quantity, Double priceUnit, Integer releaseYear) {
         super(name, author, barcode, quantity, priceUnit);
@@ -38,7 +43,7 @@ public class AntiqueBook extends Book {
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), releaseYear);
+        return Objects.hash(super.hashCode(), this.releaseYear);
     }
 
     @Override
