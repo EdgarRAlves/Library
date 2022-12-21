@@ -63,6 +63,10 @@ public class Book {
         this.priceUnit = priceUnit;
     }
 
+    public Double calculateTotalPrice() {
+        return this.quantity * this.priceUnit;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o)

@@ -35,7 +35,7 @@ class BookController {
     // Get total price of all units of a book
     @GetMapping("/books/{barcode}/total-price")
     Double totalPrice(@PathVariable Long barcode) {
-        return service.calculateTotalPrice(barcode);
+        return service.getTotalPrice(barcode);
     }
 
     // Get a list of barcodes of books in stock grouped by quantity. Barcodes sorted by total price.
