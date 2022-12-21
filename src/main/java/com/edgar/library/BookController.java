@@ -2,6 +2,9 @@ package com.edgar.library;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Map;
+
 @RestController
 class BookController {
 
@@ -35,11 +38,9 @@ class BookController {
         return service.calculateTotalPrice(barcode);
     }
 
-    // Get a list of barcodes of books in stock grouped by quantity
-    //@GetMapping("/books")
-    //List<Book> all() {
-    //    return repository.findAll()
-    //}
-
-    // {50: barcodes, 10: barcodes, 34: barcodes}
+    // Get a list of barcodes of books in stock grouped by quantity. Barcodes sorted by total price.
+    @GetMapping("/books")
+    Map<Integer, List<Book>> listBarcodes() {
+        return service.getListBarcodes();
+    }
 }

@@ -2,6 +2,10 @@ package com.edgar.library;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 @Service
 class BookService {
 
@@ -37,5 +41,17 @@ class BookService {
         Book book = repository.findById(barcode) . orElseThrow(() -> new BookNotFoundException(barcode));
 
         return book.getQuantity() * book.getPriceUnit();
+    }
+
+    public Map<Integer, List<Book>> getListBarcodes() {
+        return groupByQuantity(findAllInStock());
+    }
+
+    public List<Book> findAllInStock() {
+         return repository.findAll().stream().filter(p -> p.getQuantity() > 0).collect(Collectors.toList());
+    }
+
+    public Map<Integer, List<Book>> groupByQuantity(List<Book> books) {
+        return books.stream().collect(Collectors.groupingBy(Book::getQuantity));
     }
 }
