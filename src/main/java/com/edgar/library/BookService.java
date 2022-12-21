@@ -47,6 +47,7 @@ class BookService {
         return groupByQuantity(findAllInStock());
     }
 
+    // Books can have quantity = 0
     public List<Book> findAllInStock() {
          return repository.findAll().stream().filter(p -> p.getQuantity() > 0).collect(Collectors.toList());
     }

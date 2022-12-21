@@ -6,16 +6,16 @@ import jakarta.persistence.Id;
 import java.util.Objects;
 
 @Entity
-class Book {
-    private String name;
-    private String author;
-    private @Id Long barcode;
-    private Integer quantity;
-    private Double priceUnit;
+public class Book {
+    protected String name;
+    protected String author;
+    protected @Id Long barcode;
+    protected Integer quantity;
+    protected Double priceUnit;
 
     public Book() {}
 
-    Book(String name, String author, Long barcode, Integer quantity, Double priceUnit) {
+    public Book(String name, String author, Long barcode, Integer quantity, Double priceUnit) {
         this.name = name;
         this.author = author;
         this.barcode = barcode;
@@ -64,12 +64,11 @@ class Book {
     }
 
     @Override
-    public boolean equals (Object o) {
+    public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (!(o instanceof Book))
+        if (!(o instanceof Book book))
             return false;
-        Book book = (Book) o;
         return Objects.equals(this.name, book.name) && Objects.equals(this.author, book.author) &&
                 Objects.equals(this.barcode, book.barcode) && Objects.equals(this.quantity, book.quantity) &&
                 Objects.equals(this.priceUnit, book.priceUnit);
@@ -77,12 +76,12 @@ class Book {
 
     @Override
     public int hashCode() {
-       return Objects.hash(this.name, this.author, this.barcode, this. quantity, this.priceUnit);
+        return Objects.hash(this.name, this.author, this.barcode, this.quantity, this.priceUnit);
     }
 
     @Override
     public String toString() {
-        return "Book{" + "name=" + this.name + ", author=" + this.author + ", barcode=" + this.barcode +
-                ", quantity=" + this.quantity + ", price =" + this.priceUnit + '}';
+        return "Book{" + "name='" + this.name + '\'' + ", author='" + this.author + '\'' + ", barcode=" + this.barcode +
+                ", quantity=" + this.quantity + ", priceUnit=" + this.priceUnit + '}';
     }
 }
