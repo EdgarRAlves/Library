@@ -33,7 +33,7 @@ class BookController {
 
     // Get total price of all units of a book
     @GetMapping("/books/{barcode}/total-price")
-    Double totalPrice(@PathVariable Long barcode) {
+    String totalPrice(@PathVariable Long barcode) {
         return service.getTotalPrice(barcode);
     }
 
