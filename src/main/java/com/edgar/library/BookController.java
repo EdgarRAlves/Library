@@ -3,7 +3,6 @@ package com.edgar.library;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 class BookController {
@@ -16,8 +15,8 @@ class BookController {
 
     // Create a new book
     @PostMapping("/books")
-    Book newBook(@RequestBody Book newBook) {
-        return service.save(newBook);
+    Book newBook(@RequestBody Book book) {
+        return service.save(book);
     }
 
     // Get a book

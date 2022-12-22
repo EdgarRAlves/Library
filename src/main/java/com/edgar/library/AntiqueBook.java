@@ -27,7 +27,7 @@ public class AntiqueBook extends Book {
     }
 
     public Double calculateTotalPrice() {
-        return this.quantity * this.priceUnit * ((CURRENT_YEAR - this.releaseYear)/10);
+        return this.quantity * this.priceUnit * (CURRENT_YEAR - this.releaseYear)/10;
     }
 
     @Override

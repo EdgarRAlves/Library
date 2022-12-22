@@ -3,8 +3,6 @@ package com.edgar.library;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @Service
 class BookService {
@@ -15,8 +13,8 @@ class BookService {
         this.repository = repository;
     }
 
-    public Book save(Book newBook) {
-        return repository.save(newBook);
+    public Book save(Book book) {
+        return repository.save(book);
     }
 
     public Book findByBarcode(Long barcode) {
