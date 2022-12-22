@@ -36,7 +36,7 @@ class BookService {
     }
 
     public Double getTotalPrice(Long barcode) {
-        Book book = repository.findById(barcode) . orElseThrow(() -> new BookNotFoundException(barcode));
+        Book book = findByBarcode(barcode);
 
         return book.calculateTotalPrice();
     }
