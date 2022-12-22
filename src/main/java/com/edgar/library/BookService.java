@@ -23,16 +23,10 @@ class BookService {
     }
 
     public Book update(Book newBook, Long barcode) {
-        return repository.findById(barcode)
-            .map(book -> {
-                book.setName(newBook.getName());
-                book.setAuthor(newBook.getAuthor());
-                book.setBarcode(newBook.getBarcode());
-                book.setQuantity(newBook.getQuantity());
-                book.setPrice(newBook.getPriceUnit());
-                return repository.save(book);
-            })
-            .orElseThrow(() -> new BookNotFoundException(barcode));
+        Book oldBook = findByBarcode(barcode);
+        repository.delete(oldBook);
+
+        return save(newBook);
     }
 
     public Double getTotalPrice(Long barcode) {

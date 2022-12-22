@@ -1,10 +1,17 @@
 package com.edgar.library;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 import java.util.Objects;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type", visible = true)
+@JsonSubTypes({
+    @JsonSubTypes.Type(value = AntiqueBook.class, name = "AntiqueBook"),
+    @JsonSubTypes.Type(value = ScienceJournal.class, name = "ScienceJournal")
+})
 @Entity
 public class Book {
     protected String name;

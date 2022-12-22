@@ -19,18 +19,6 @@ class BookController {
         return service.save(book);
     }
 
-    // Create new AntiqueBook
-    @PostMapping("/books/antique-books")
-    AntiqueBook newAntiqueBook(@RequestBody AntiqueBook antiqueBook) {
-        return (AntiqueBook) service.save(antiqueBook);
-    }
-
-    // Create new ScienceJournal
-    @PostMapping("/books/science-journals")
-    ScienceJournal newScienceJournal(@RequestBody ScienceJournal scienceJournal) {
-        return (ScienceJournal) service.save(scienceJournal);
-    }
-
     // Get one book
     @GetMapping("/books/{barcode}")
     Book one(@PathVariable Long barcode) {
