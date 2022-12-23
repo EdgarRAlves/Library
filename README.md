@@ -11,7 +11,7 @@ Antique books and science journals can also be added to the application. They ar
 
     ```./mvnw clean spring-boot:run```
 
-3. Download and install an API platform (such as Postman) to use the REST Endpoints of the next section. The application is preloaded with some books (Antique and Science Journals included).
+3. Download and install an API platform (such as Postman) to use the REST Endpoints of the next section. The application is preloaded with some books (Antique and Science Journal included).
 
 ## REST Endpoints
 The following REST endpoints are available upon deployment of the book management system:
