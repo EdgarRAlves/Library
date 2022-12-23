@@ -1,5 +1,6 @@
 package com.edgar.library;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +16,7 @@ class BookController {
 
     // Create new Book
     @PostMapping("/books")
-    Book newBook(@RequestBody Book book) {
+    Book newBook(@Valid @RequestBody Book book) {
         return service.save(book);
     }
 
@@ -27,7 +28,7 @@ class BookController {
 
     // Update a book
     @PutMapping("/books/{barcode}")
-    Book replaceBook(@RequestBody Book newBook, @PathVariable Long barcode) {
+    Book replaceBook(@Valid @RequestBody Book newBook, @PathVariable Long barcode) {
         return service.update(newBook, barcode);
     }
 

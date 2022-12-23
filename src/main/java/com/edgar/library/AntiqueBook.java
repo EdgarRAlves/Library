@@ -1,6 +1,7 @@
 package com.edgar.library;
 
 import jakarta.persistence.Entity;
+import jakarta.validation.constraints.Max;
 
 import java.time.Year;
 import java.util.Objects;
@@ -9,6 +10,7 @@ import java.util.Objects;
 public class AntiqueBook extends Book {
     private static final Integer CURRENT_YEAR = Year.now().getValue();
 
+    @Max(1900)
     private Integer releaseYear;
 
     public AntiqueBook() {}

@@ -1,11 +1,15 @@
 package com.edgar.library;
 
 import jakarta.persistence.Entity;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 
 import java.util.Objects;
 
 @Entity
 public class ScienceJournal extends Book {
+    @Min(1)
+    @Max(10)
     private Integer scienceIndex;
 
     public ScienceJournal() {}
