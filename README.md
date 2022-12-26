@@ -2,7 +2,7 @@
 
 REST API service using Spring Framework and Java. This application has the capability to get a single book, create and update a book, calculate the total price, and show a list of barcodes for the books in stock grouped by quantity.
 
-Antique books and science journals can also be added to the application. They are just like other books but have additional properties and a different calculation method of the total price.
+Antique books and science journals can also be added and managed. They are just like other books but have additional properties and different calculation methods for the total price.
 
 ## Starting the Book Management System
 1. Install [Oracle JDK 17.0.5](https://www.oracle.com/java/technologies/downloads/#java17) on your machine;
