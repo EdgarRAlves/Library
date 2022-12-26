@@ -2,9 +2,7 @@ package com.edgar.library;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
@@ -18,7 +16,7 @@ public class Book {
     protected @Id @GeneratedValue Long id;
     protected String name;
     protected String author;
-    protected Long barcode;
+    protected @Column(unique = true) Long barcode;
     protected Integer quantity;
     protected Double priceUnit;
 
