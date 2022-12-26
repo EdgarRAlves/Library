@@ -19,7 +19,7 @@ class BookService {
     }
 
     public Book findByBarcode(Long barcode) {
-        return repository.findById(barcode)
+        return repository.findByBarcode(barcode)
             .orElseThrow(() -> new BookNotFoundException(barcode));
     }
 
