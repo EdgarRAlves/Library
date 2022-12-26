@@ -23,11 +23,22 @@ class BookService {
             .orElseThrow(() -> new BookNotFoundException(barcode));
     }
 
-    public Book update(Book newBook, Long barcode) {
-        Book oldBook = findByBarcode(barcode);
-        repository.delete(oldBook);
+    public Book update(Book updatedBook, Long barcode) {
+        Book book = findByBarcode(barcode);
 
-        return save(newBook);
+        book.setName(updatedBook.getName());
+        book.setAuthor(updatedBook.getAuthor());
+        book.setBarcode(updatedBook.getBarcode());
+        book.setQuantity(updatedBook.getQuantity());
+        book.setPrice(updatedBook.getPriceUnit());
+
+        if (book instanceof AntiqueBook) {
+            ((AntiqueBook) book).setReleaseYear(((AntiqueBook) updatedBook).getReleaseYear());
+        } else if (book instanceof ScienceJournal) {
+            ((ScienceJournal) book).setScienceIndex(((ScienceJournal) updatedBook).getScienceIndex());
+        }
+
+        return save(book);
     }
 
     public String getTotalPrice(Long barcode) {

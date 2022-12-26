@@ -28,8 +28,8 @@ class BookController {
 
     // Update a book
     @PutMapping("/books/{barcode}")
-    Book replaceBook(@Valid @RequestBody Book newBook, @PathVariable Long barcode) {
-        return service.update(newBook, barcode);
+    Book updateBook(@Valid @RequestBody Book updatedBook, @PathVariable Long barcode) {
+        return service.update(updatedBook, barcode);
     }
 
     // Get total price of all units of a book
