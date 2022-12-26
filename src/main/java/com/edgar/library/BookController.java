@@ -16,13 +16,13 @@ class BookController {
 
     // Create new Book
     @PostMapping("/books")
-    Book newBook(@Valid @RequestBody Book book) {
+    Book createBook(@Valid @RequestBody Book book) {
         return service.save(book);
     }
 
     // Get one book
     @GetMapping("/books/{barcode}")
-    Book one(@PathVariable Long barcode) {
+    Book getOne(@PathVariable Long barcode) {
         return service.findByBarcode(barcode);
     }
 
@@ -34,13 +34,13 @@ class BookController {
 
     // Get total price of all units of a book
     @GetMapping("/books/{barcode}/total-price")
-    String totalPrice(@PathVariable Long barcode) {
+    String getTotalPrice(@PathVariable Long barcode) {
         return service.getTotalPrice(barcode);
     }
 
     // Get a list of barcodes of books in stock grouped by quantity.
     @GetMapping("/books")
-    List<Object[]> listBarcodes() {
+    List<Object[]> getListBarcodes() {
         return service.getListBarcodes();
     }
 }
