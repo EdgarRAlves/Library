@@ -47,6 +47,6 @@ public class ScienceJournal extends Book {
 
     @Override
     public String toString() {
-        return "ScienceJournal{" + "scienceIndex=" + this.scienceIndex + "} " + super.toString();
+        return "(ScienceJournal) " + super.toString() + ", scienceIndex=" + this.scienceIndex;
     }
 }

@@ -48,6 +48,6 @@ public class AntiqueBook extends Book {
 
     @Override
     public String toString() {
-        return "AntiqueBook{" + "releaseYear=" + this.releaseYear + "} " + super.toString();
+        return "(AntiqueBook) " + super.toString() + ", releaseYear=" + this.releaseYear;
     }
 }

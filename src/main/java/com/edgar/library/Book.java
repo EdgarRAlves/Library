@@ -100,7 +100,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" + "id=" + this.id + ", name='" + this.name + '\'' + ", author='" + this.author + '\'' + ", barcode=" + this.barcode +
-                ", quantity=" + this.quantity + ", priceUnit=" + this.priceUnit + '}';
+        return "id=" + this.id + ", name='" + this.name + '\'' + ", author='" + this.author + '\'' + ", barcode=" + this.barcode +
+                ", quantity=" + this.quantity + ", priceUnit=" + this.priceUnit;
     }
 }
