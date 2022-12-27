@@ -5,7 +5,7 @@ REST API service using Spring Framework and Java. This application has the capab
 Antique books and science journals can also be added and managed. They are just like other books but have additional properties and different calculation methods for the total price.
 
 ## Starting the Book Management System
-1. Install [Oracle JDK 17.0.5](https://www.oracle.com/java/technologies/downloads/#java17) on your machine;
+1. Install [Oracle JDK 17 (or 19)](https://www.oracle.com/java/technologies/downloads/#java17) on your machine. If on Windows, make sure that JAVA_HOME variable matches the location of the installation;
 
 2. To start this web service, either Run LibraryApplication from your IDE (e.g. Intellij IDEA) or execute the following command in the root directory:
 
