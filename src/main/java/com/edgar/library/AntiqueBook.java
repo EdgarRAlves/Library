@@ -34,13 +34,11 @@ public class AntiqueBook extends Book {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (!(o instanceof AntiqueBook antiqueBook))
-            return false;
-        if (!super.equals(o))
-            return false;
-        return Objects.equals(this.releaseYear, antiqueBook.releaseYear);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        AntiqueBook AntiqueBook = (AntiqueBook) o;
+        return Objects.equals(this.releaseYear, AntiqueBook.releaseYear);
     }
 
     @Override

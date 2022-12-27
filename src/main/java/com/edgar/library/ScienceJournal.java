@@ -33,13 +33,11 @@ public class ScienceJournal extends Book {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (!(o instanceof ScienceJournal scienceJournal))
-            return false;
-        if (!super.equals(o))
-            return false;
-        return Objects.equals(this.scienceIndex, scienceJournal.scienceIndex);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        ScienceJournal ScienceJournal = (ScienceJournal) o;
+        return Objects.equals(this.scienceIndex, ScienceJournal.scienceIndex);
     }
 
     @Override
